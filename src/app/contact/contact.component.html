@@ -1,0 +1,94 @@
+<div class="container bg-light">
+        <h2 class="text-center">Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam alias maxime ut accusamus illum porro 
+            ullam sequi aliquam minima eius incidunt dolorem vitae atque, quasi odit nulla illo, sunt sed enim. 
+            eriores, ex? Iste quos neque provident cumque sequi ut nemo, commodi voluptate illum hic harum ullam,
+             aut, quibusdam adipisci.</p>
+
+            <hr>
+
+           <div class="row">
+                   <div class="col-md-4 t">
+                          
+
+                           <form #userForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+
+
+                                <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" class="form-control" [(ngModel)]="userModel.name"
+                                required="required" minlength="3" pattern="^[A-Za-z0-9/-]*$" #name="ngModel" [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched),
+                                'is-valid': name.valid && (name.dirty || name.touched)}">
+                                
+                                <span class="text-danger" *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.required">
+                                        Name cant be blank
+                                </span>
+
+                                <span class="text-danger" *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.pattern">
+                                        pattern error
+                                </span>
+
+                                <span class="text-danger" *ngIf="name.invalid && (name.dirty || name.touched) && name.errors?.minlength">
+                                        name should be more than 3 letters
+                                </span>
+
+                              
+                                </div>
+                               
+
+
+                                <div class="form-group">
+                                        <label for="names">Email</label>
+                                        <input type="email" name="names" id="names" class="form-control"  [(ngModel)]="userModel.email"
+                                        required="required" #mail="ngModel" [ngClass]="{'is-invalid': mail.invalid && (mail.dirty || mail.touched),
+                                        'is-valid': mail.valid && (mail.dirty ||mail.touched)}">
+
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="phone">Mobile No</label>
+                                        <input type="text"  ngModel name="phone" id="phone" class="form-control" [(ngModel)]="userModel.phone"
+                                        required="required" pattern="^[0-9/-]*$" maxlength="10" #phone ="ngModel" [ngClass]="{'is-invalid': phone.invalid && (phone.dirty || phone.touched),
+                                        'is-valid': phone.valid && (phone.dirty ||phone.touched)}">
+
+
+                                        <span class="text-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors?.required">
+                                                        Mobile no cant be blank
+                                                </span>
+                
+                                                <span class="text-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors?.pattern">
+                                                        Numbers only allowed
+                                                </span>
+                
+                                                <span class="text-danger" *ngIf="phone.invalid && (name.dirty || phone.touched) && phone.errors?.maxlength">
+                                                        
+                                                </span>
+
+                                                
+                                </div>
+
+                                <div class="form-group">
+                                        <select name="select"  ngModel>
+                                                <option selected>I am interested in</option>
+                                                <option *ngFor="let topic of topics">{{topic}}</option>
+                                        </select>
+                                </div>
+
+                                <div class=" mb-3">
+                                        <label >Time preference</label>
+                                        <div class="form-check">
+                                                <input type="radio"  ngModel name="timepreference" class="form-check-input" value="morning">
+                                                <label class="form-check-label">Morning (9AM - 12PM)</label>
+                                        </div>
+                                        <div class="form-check">
+                                                <input type="radio"  ngModel name="timepreference" class="form-check-input" value="evening">
+                                                 <label class="form-check-label">Evening (5PM - 8PM)</label>
+                                        </div>
+                                </div>
+
+                                <button [disabled]="userForm.form.invalid" class="btn btn-danger mb-5">Submit</button>
+                           </form>
+                   </div>
+           </div>
+    </div>
+    

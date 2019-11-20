@@ -1,0 +1,29 @@
+.topnav{
+    background-color: rgb(0, 162, 255);
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand{
+    width: 20%;
+    float: left;
+}
+
+.menus{
+    width: 80%;
+    float: right;
+    text-align: right;
+}
+
+.menus a {
+
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.clear{
+    clear: both;
+}

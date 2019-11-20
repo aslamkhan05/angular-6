@@ -1,0 +1,9 @@
+.box{
+    
+    border: antiquewhite solid 1px;
+    width: 80%;
+    align-items: center;
+    margin-top: 10px;
+    background-color: antiquewhite;
+    padding: 30px 30px;
+}
